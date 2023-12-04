@@ -15,6 +15,10 @@
 		C73DAF40255D0CDE00020D38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C73DAF3F255D0CDE00020D38 /* Assets.xcassets */; };
 		C73DAF43255D0CDF00020D38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C73DAF41255D0CDF00020D38 /* LaunchScreen.storyboard */; };
 		C73DAF4C255D0D0400020D38 /* JuiceMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73DAF4B255D0D0400020D38 /* JuiceMaker.swift */; };
+		CCCA43AA2B1D733700E5E0BD /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA43A92B1D733700E5E0BD /* ErrorHandling.swift */; };
+		CCCA43AC2B1D734300E5E0BD /* MessageHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA43AB2B1D734300E5E0BD /* MessageHandling.swift */; };
+		CCCA43AE2B1DB80200E5E0BD /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA43AD2B1DB80200E5E0BD /* Fruits.swift */; };
+		CCCA43B02B1DBE8900E5E0BD /* resultJuice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCA43AF2B1DBE8900E5E0BD /* resultJuice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		C73DAF42255D0CDF00020D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C73DAF44255D0CDF00020D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C73DAF4B255D0D0400020D38 /* JuiceMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMaker.swift; sourceTree = "<group>"; };
+		CCCA43A92B1D733700E5E0BD /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		CCCA43AB2B1D734300E5E0BD /* MessageHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHandling.swift; sourceTree = "<group>"; };
+		CCCA43AD2B1DB80200E5E0BD /* Fruits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
+		CCCA43AF2B1DBE8900E5E0BD /* resultJuice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultJuice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 			children = (
 				C73DAF4B255D0D0400020D38 /* JuiceMaker.swift */,
 				C71CD66A266C7ACB0038B9CB /* FruitStore.swift */,
+				CCCA43A92B1D733700E5E0BD /* ErrorHandling.swift */,
+				CCCA43AB2B1D734300E5E0BD /* MessageHandling.swift */,
+				CCCA43AD2B1DB80200E5E0BD /* Fruits.swift */,
+				CCCA43AF2B1DBE8900E5E0BD /* resultJuice.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,7 +182,11 @@
 				C71CD66B266C7ACB0038B9CB /* FruitStore.swift in Sources */,
 				C73DAF3B255D0CDD00020D38 /* ViewController.swift in Sources */,
 				C73DAF37255D0CDD00020D38 /* AppDelegate.swift in Sources */,
+				CCCA43AA2B1D733700E5E0BD /* ErrorHandling.swift in Sources */,
+				CCCA43AE2B1DB80200E5E0BD /* Fruits.swift in Sources */,
 				C73DAF39255D0CDD00020D38 /* SceneDelegate.swift in Sources */,
+				CCCA43AC2B1D734300E5E0BD /* MessageHandling.swift in Sources */,
+				CCCA43B02B1DBE8900E5E0BD /* resultJuice.swift in Sources */,
 				C73DAF4C255D0D0400020D38 /* JuiceMaker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
