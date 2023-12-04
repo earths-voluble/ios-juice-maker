@@ -7,43 +7,43 @@
 
 import Foundation
 
-enum resultJuice {
+enum Juice {
     // 딸기 16
-    case strawberryJuice
+    case strawberry
     // 바나나 2
-    case bannaJuice
+    case banna
     // 키위 2
-    case kiwiJuice
+    case kiwi
     // 파인애플 2
-    case pineappleJuice
+    case pineapple
     // 딸기 10, 바나나 1
-    case strawberryBananaJuice
+    case strawberryBanana
     // 망고 3
-    case mangoJuice
+    case mango
     // 망고 2, 키위 1
-    case mangoKiwiJuice
+    case mangoKiwi
     
-    func make(result: resultJuice) -> Fruits {
+    func make(_ result: Juice, fruits: FruitStore) -> FruitStore {
         switch self {
-        case .strawberryJuice:
+        case .strawberry:
             fruits.strawberry -= 16
             return fruits
-        case .bannaJuice:
+        case .banna:
             fruits.banana -= 2
             return fruits
-        case .kiwiJuice:
+        case .kiwi:
             fruits.kiwi -= 2
             return fruits
-        case .pineappleJuice:
+        case .pineapple:
             fruits.pineapple -= 2
             return fruits
-        case .strawberryBananaJuice:
+        case .strawberryBanana:
             fruits.strawberry -= 10; fruits.banana -= 1
             return fruits
-        case .mangoJuice:
+        case .mango:
             fruits.mango -= 3
             return fruits
-        case .mangoKiwiJuice:
+        case .mangoKiwi:
             fruits.mango -= 2; fruits.kiwi -= 1
             return fruits
         }

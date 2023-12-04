@@ -15,30 +15,30 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btStrawBerryBanna(_ sender: Any) {
-        juiceMaker.shakeFruitsfor(juice: resultJuice.bannaJuice)
+        juiceMaker.order(Juice.strawberryBanana)
     }
     
     @IBAction func btMangoKiwi(_ sender: Any) {
-        print("test2")
+        juiceMaker.order(Juice.mangoKiwi)
     }
     
     @IBAction func btStrawBerry(_ sender: Any) {
-        print("test3")
+        juiceMaker.order(Juice.strawberry)
     }
     
     @IBAction func btBanna(_ sender: Any) {
-        print("test4")
+        juiceMaker.order(Juice.banna)
     }
     
     @IBAction func btPineapple(_ sender: Any) {
-        print("test5")
+        juiceMaker.order(Juice.pineapple)
     }
     
     @IBAction func btKiwi(_ sender: Any) {
-        print("test6")
+        juiceMaker.order(Juice.kiwi)
     }
     @IBAction func btMango(_ sender: Any) {
-        print("test7")
+        juiceMaker.order(Juice.mango)
     }
 }
 

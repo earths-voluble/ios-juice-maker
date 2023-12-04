@@ -9,16 +9,26 @@ import Foundation
 // 쥬스 메이커 타입
 struct JuiceMaker {
     
-//    var fruits : Fruits
+    var fruitStore: FruitStore
     
     init() {
-        print("hi")
-        
+        fruitStore = FruitStore()
     }
     
+    mutating func order(_ juice: Juice) {
+        self.fruitStore = juice.make(juice, fruits: fruitStore)
+        showJuice()
+    }
+    private func showJuice() {
+        print("banana : ", fruitStore.banana)
+        print("kiwi : ", fruitStore.kiwi)
+        print("mango : ", fruitStore.mango)
+        print("pineapple : ", fruitStore.pineapple)
+        print("strawberry : ", fruitStore.strawberry)
+    }
     
-    func shakeFruitsfor(juice: resultJuice) {
-        juice.make(fruits: juice)
+    private func make() {
+        
     }
 }
 
