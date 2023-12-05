@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btBanna(_ sender: Any) {
-        juiceMaker.order(Juice.banna)
+        juiceMaker.order(Juice.banana)
     }
     
     @IBAction func btPineapple(_ sender: Any) {

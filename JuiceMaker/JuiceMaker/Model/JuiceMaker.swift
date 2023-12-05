@@ -16,15 +16,26 @@ struct JuiceMaker {
     }
     
     mutating func order(_ juice: Juice) {
-        self.fruitStore = juice.make(juice, fruits: fruitStore)
+        do {
+            self.fruitStore = try juice.make(juice, fruits: fruitStore)
+        }
+        catch ErrorHandling.exhaustedFruitsError {
+            
+        }
+        catch {
+            
+        }
+//        self.fruitStore = juice.make(juice, fruits: fruitStore)
         showJuice()
     }
     private func showJuice() {
+        print("-----------------")
         print("banana : ", fruitStore.banana)
         print("kiwi : ", fruitStore.kiwi)
         print("mango : ", fruitStore.mango)
         print("pineapple : ", fruitStore.pineapple)
         print("strawberry : ", fruitStore.strawberry)
+        print("-----------------")
     }
     
     private func make() {
