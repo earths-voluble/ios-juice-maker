@@ -16,8 +16,6 @@ struct JuiceMaker {
         self.store.initializeFruit()
     }
     
-    
-    
     func showMenu() {
         print("어서오세요 아래 매뉴중 하나를 선택해주세요!\n딸바쥬스, 망키쥬스, 딸기쥬스, 바나나쥬스, 파인애플쥬스, 키위쥬스, 망고쥬스")
     }

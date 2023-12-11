@@ -30,29 +30,6 @@ class ViewController: UIViewController {
         initView()
     }
     
-    private func initView() {
-        let fruitsLabel = fruitsLabel
-        fruitsLabel.forEach { fruit, labels in
-            labels.text = "10"
-        }
-    }
-    
-    private func setFruitTextView(_ recipe: Recipe) {
-        juiceMaker.order(recipe)
-        self.store.fruitsFlag.forEach { fruit, isPushed in
-            guard let uiLabel = fruitsLabel[fruit],
-                  let FruitValue = self.store.fruits[fruit],
-                  isPushed
-            else {
-                return
-            }
-            uiLabel.text = String(FruitValue)
-            self.store.resetFlag()
-        }
-    }
-    
-    
-    
     @IBAction func btnJuiceOrder(_ choice: UIButton) {
         let pressedButton = choice.tag
         var choicedJuice : Recipe
@@ -80,6 +57,32 @@ class ViewController: UIViewController {
     @IBAction func btnMoveStore(_ sender: Any) {
         guard let StoreViewController = self.storyboard?.instantiateViewController(withIdentifier: "StoreViewController") else {return}
         self.navigationController?.pushViewController(StoreViewController, animated: true)
+    }
+    
+    
+    private func initView() {
+        self.store.fruits.forEach { fruit, fruitValue in
+            guard let uiLabel = fruitsLabel[fruit],
+                  let FruitValue = self.store.fruits[fruit]
+            else {
+                return
+            }
+            uiLabel.text = String(FruitValue)
+        }
+    }
+    
+    private func setFruitTextView(_ recipe: Recipe) {
+        juiceMaker.order(recipe)
+        self.store.fruitsFlag.forEach { fruit, isPushed in
+            guard let uiLabel = fruitsLabel[fruit],
+                  let FruitValue = self.store.fruits[fruit],
+                  isPushed
+            else {
+                return
+            }
+            uiLabel.text = String(FruitValue)
+            self.store.resetFlag()
+        }
     }
 }
 
