@@ -15,6 +15,13 @@ final class FruitStore {
         Fruit.allCases.forEach { fruits[$0.rawValue] = 10 }
     }
     
+    var fruitsFlag: [String : Bool] = [
+        Fruit.strawberry.rawValue: false,
+        Fruit.banana.rawValue: false,
+        Fruit.pineapple.rawValue: false,
+        Fruit.kiwi.rawValue: false,
+        Fruit.mango.rawValue: false
+    ]
     
     var recipes = [
                  Recipe.strawberry.rawValue: [16],
@@ -33,6 +40,12 @@ final class FruitStore {
         fruits[fruitName] = currentStock + quantity
         print("과일 저장소에서 \(fruitName)를 \(quantity)만큼 추가 저장했습니다")
         print(fruits)
+    }
+    
+    func resetFlag() {
+        self.fruitsFlag.keys.forEach { fruits in
+            self.fruitsFlag[fruits] = false
+        }
     }
     
 }
