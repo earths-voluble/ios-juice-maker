@@ -9,10 +9,15 @@ import UIKit
 
 class StoreViewController: UIViewController {
 
+    let strawberryLabel = UILabel()
+    let bananaLabel = UILabel()
+    let pineappleLabel = UILabel()
+    let kiwiLabel = UILabel()
+    let mangoLabel = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        strawberryLabel.text = "9"
     }
     
 
