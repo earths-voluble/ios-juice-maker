@@ -15,9 +15,8 @@ class ViewController: UIViewController {
         print(choice.tag)
     }
     @IBAction func btnMoveStore(_ sender: Any) {
-        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "StoreViewController")
-
-        self.navigationController?.pushViewController(pushVC!, animated: true)
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "View Controller") else {return}
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
