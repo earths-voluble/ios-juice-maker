@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89601D572B26FCB900EC1177 /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89601D562B26FCB900EC1177 /* StockViewController.swift */; };
+		89601D592B28002400EC1177 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89601D582B28002400EC1177 /* AlertController.swift */; };
 		89667DC62B1DB9E20017C068 /* JuiceMakerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89667DC52B1DB9E20017C068 /* JuiceMakerErrors.swift */; };
 		89667E162B200A170017C068 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89667E152B200A170017C068 /* Fruit.swift */; };
 		89667E182B200A880017C068 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89667E172B200A880017C068 /* Recipe.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89601D562B26FCB900EC1177 /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
+		89601D582B28002400EC1177 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		89667DC52B1DB9E20017C068 /* JuiceMakerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMakerErrors.swift; sourceTree = "<group>"; };
 		89667E152B200A170017C068 /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		89667E172B200A880017C068 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 				C73DAF36255D0CDD00020D38 /* AppDelegate.swift */,
 				C73DAF38255D0CDD00020D38 /* SceneDelegate.swift */,
 				C73DAF3A255D0CDD00020D38 /* ViewController.swift */,
+				89601D582B28002400EC1177 /* AlertController.swift */,
+				89601D562B26FCB900EC1177 /* StockViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,10 +183,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C71CD66B266C7ACB0038B9CB /* FruitStore.swift in Sources */,
+				89601D572B26FCB900EC1177 /* StockViewController.swift in Sources */,
 				C73DAF3B255D0CDD00020D38 /* ViewController.swift in Sources */,
 				C73DAF37255D0CDD00020D38 /* AppDelegate.swift in Sources */,
 				C73DAF39255D0CDD00020D38 /* SceneDelegate.swift in Sources */,
 				89667E162B200A170017C068 /* Fruit.swift in Sources */,
+				89601D592B28002400EC1177 /* AlertController.swift in Sources */,
 				89667DC62B1DB9E20017C068 /* JuiceMakerErrors.swift in Sources */,
 				C73DAF4C255D0D0400020D38 /* JuiceMaker.swift in Sources */,
 				89667E182B200A880017C068 /* Recipe.swift in Sources */,
