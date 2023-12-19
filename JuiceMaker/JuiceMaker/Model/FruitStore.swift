@@ -34,8 +34,31 @@ final class FruitStore {
     ]
     
     func resetFlag() {
+        
+    
         self.fruitsFlag.keys.forEach { fruits in
-            self.fruitsFlag[fruits] = false
+            guard let flag = fruitsFlag["strawberry"] else {
+                return
+            }
+            flag.value = false
         }
+        
+//        self.fruitsFlag.keys.forEach { fruits in
+//            if self.fruitsFlag[key: fruits] == nil {
+//                print("error")
+//            }
+//            else {
+//                self.fruitsFlag[fruits] = false
+//            }
+//        }
+//        self.fruitsFlag.keys.forEach { fruits in
+//            self.fruitsFlag[fruits] = false
+//        }
+    }
+}
+
+extension Dictionary {
+    subscript(safe: String) -> Recipe? {
+        return safe ~= safe ? self[safe] : nil
     }
 }

@@ -82,8 +82,8 @@ extension ViewController {
                 return
             }
             uiLabel.text = String(fruitValue)
-            self.fruitStore.resetFlag()
         }
+        self.fruitStore.resetFlag()
     }
     private func initView() {
         self.fruitStore.fruitsFlag.forEach { fruit, isUsed in
