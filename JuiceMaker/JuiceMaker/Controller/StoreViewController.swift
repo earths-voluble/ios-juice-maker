@@ -21,7 +21,7 @@ final class StoreViewController: UIViewController {
         Fruit.mango.rawValue : mangoLabel
     ]
     
-    let fruitStore = FruitStore.shared
+    var fruitStore = FruitStore()
     lazy var juiceMaker: JuiceMaker = JuiceMaker(store: fruitStore)
     
     let dismissAlertAction = UIAlertAction(title: "확인", style: .default)
@@ -29,7 +29,6 @@ final class StoreViewController: UIViewController {
         self.moveFruitStore()
     }
     let cancelAlertAction = UIAlertAction(title: "아니오", style: .destructive)
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,25 +69,18 @@ final class StoreViewController: UIViewController {
         let recipeName = selectedRecipe.recipeName
         setMarketView(checkSuccess(result), recipeName)
     }
+}
+
+extension StoreViewController {
     
     private func moveFruitStore() {
         guard let secondVC = storyboard?.instantiateViewController(withIdentifier: "StockViewController") as? StockViewController else { return }
         secondVC.modalPresentationStyle = .fullScreen
+        secondVC.delegate = self
+        secondVC.fruitStore = self.fruitStore
         self.present(secondVC, animated: true)
     }
-    
-}
 
-extension StoreViewController {
-    private func checkSuccess(_ result: Result<Bool, JuiceMakerErrors>) -> Bool {
-        switch result {
-        case .success(_):
-            return true
-        case .failure(_):
-            return false
-        }
-    }
-    
     private func setMarketView(_ isDone: Bool, _ recipeName: String) {
         showAlert(isDone, recipeName)
         self.fruitStore.fruitsFlag.forEach { fruit, isUsed in
@@ -102,6 +94,7 @@ extension StoreViewController {
             self.fruitStore.resetFlag()
         }
     }
+    
     private func initView() {
         self.fruitStore.fruitsFlag.forEach { fruit, isUsed in
             guard let uiLabel = fruitsLabel[fruit],
@@ -112,25 +105,15 @@ extension StoreViewController {
             uiLabel.text = String(fruitValue)
         }
     }
-    
-    private func showAlert(_ isDone: Bool, _ recipeName: String) {
-        if isDone {
-            AlertManager.setAlert(
-                vcToShow: self,
-                preferredStyle: UIAlertController.Style.alert,
-                title: "\(recipeName) 쥬스 나왔습니다! 맛있게 드세요!",
-                message: "",
-                buttonActions: [dismissAlertAction]
-            )
-        }
-        else {
-            AlertManager.setAlert(
-                vcToShow: self,
-                preferredStyle: UIAlertController.Style.alert,
-                title: "재료가 모자라요. 재고를 수정할까요?",
-                message: "",
-                buttonActions: [acceptAlertAction, cancelAlertAction]
-            )
-        }
+}
+
+protocol StockViewControllerDelegate: AnyObject {
+    func stockViewController(_ stockViewController: StockViewController, didUpdateFruit: FruitStore)
+}
+
+extension StoreViewController: StockViewControllerDelegate {
+    func stockViewController(_ stockViewController: StockViewController, didUpdateFruit: FruitStore) {
+        stockViewController.fruitStore = didUpdateFruit
+//        self.fruitStore = didUpdateFruit
     }
 }

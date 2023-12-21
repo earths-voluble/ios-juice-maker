@@ -21,7 +21,8 @@ final class StockViewController: UIViewController {
     @IBOutlet weak var kiwiStepper: UIStepper!
     @IBOutlet weak var mangoStepper: UIStepper!
     
-    let fruitStore = FruitStore.shared
+    var fruitStore: FruitStore!
+    weak var delegate: StockViewControllerDelegate?
     
     private lazy var fruitsLabel: [String: UILabel] = [
         Fruit.strawberry.rawValue : strawberryLabel,
@@ -84,6 +85,9 @@ final class StockViewController: UIViewController {
         }
         let intSender = Int(sender.value)
         fruitStore.fruits[selectedFruit.rawValue] = intSender
+        delegate?.stockViewController(self, didUpdateFruit: fruitStore)
         setTextView.text = String(intSender)
     }
 }
+
+
